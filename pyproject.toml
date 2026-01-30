@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "g-api-view"
-version = "0.1.0"
+version = "0.2.0"
 description = "Клиент для работы с Gemini API через FastAPI сервер"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -29,6 +29,6 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/ApiClientG"
-Repository = "https://github.com/yourusername/ApiClientG"
-Issues = "https://github.com/yourusername/ApiClientG/issues"
+Homepage = "https://github.com/Viktor3911/ApiClientG"
+Repository = "https://github.com/Viktor3911/ApiClientG"
+Issues = "https://github.com/Viktor3911/ApiClientG/issues"

@@ -10,13 +10,13 @@
 ### Установка из GitHub (после создания тега)
 
 ```bash
-pip install git+https://github.com/yourusername/ApiClientG.git@v0.1.0
+pip install git+https://github.com/Viktor3911/ApiClientG.git@v0.1.0
 ```
 
 Или для установки последней версии из ветки main:
 
 ```bash
-pip install git+https://github.com/yourusername/ApiClientG.git
+pip install git+https://github.com/Viktor3911/ApiClientG.git
 ```
 
 ### Установка из локальной директории (для разработки)
