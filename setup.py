@@ -1,17 +1,37 @@
 from setuptools import setup, find_packages
+import os
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# Чтение README.md с обработкой ошибок кодировки
+long_description = ""
+readme_path = os.path.join(os.path.dirname(__file__), "README.md")
+if os.path.exists(readme_path):
+    try:
+        with open(readme_path, "r", encoding="utf-8") as fh:
+            long_description = fh.read()
+    except UnicodeDecodeError:
+        try:
+            with open(readme_path, "r", encoding="utf-8-sig") as fh:
+                long_description = fh.read()
+        except Exception:
+            long_description = "Клиент для работы с Gemini API через FastAPI сервер"
 
-try:
-    with open("requirements.txt", "r", encoding="utf-8") as fh:
-        requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
-except FileNotFoundError:
-    requirements = ["requests>=2.32.3"]
+# Чтение requirements.txt с обработкой ошибок
+requirements = ["requests>=2.32.3"]
+requirements_path = os.path.join(os.path.dirname(__file__), "requirements.txt")
+if os.path.exists(requirements_path):
+    try:
+        with open(requirements_path, "r", encoding="utf-8") as fh:
+            requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+    except (UnicodeDecodeError, FileNotFoundError):
+        try:
+            with open(requirements_path, "r", encoding="utf-8-sig") as fh:
+                requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+        except Exception:
+            requirements = ["requests>=2.32.3"]
 
 setup(
     name="g-api-view",
-    version="0.1.0",
+    version="0.2.1",
     author="Viktor3911",
     author_email="your.email@example.com",
     description="Клиент для работы с Gemini API через FastAPI сервер",
